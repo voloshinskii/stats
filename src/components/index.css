@@ -1,0 +1,84 @@
+.record {
+    z-index: 100000;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 4px 10px;
+    display: flex;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background-color: white;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,.1),0 10px 10px -5px rgba(0,0,0,.04);
+    border-radius: 12px;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.red-dot {
+    border-radius: 50%;
+    background-color: #aa2518;
+    width: 0.80em;
+    height: 0.80em;
+    margin-right: 13px;
+}
+
+.card {
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,.25);
+    background: white;
+    padding: 25px 35px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.card .int {
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.card .d {
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.card .info {
+    font-size: 20px;
+}
+
+.donate {
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,.25);
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    position: absolute;
+    left: 3%;
+    width: 15%;
+    background: white;
+}
+
+.embed {
+    width: 60%;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.yt {
+    height: 720px;
+}
+
+@media only screen and (max-width: 790px) {
+    .donate {
+        position: unset;
+        width: 100%;
+    }
+    .embed {
+        width: 90%;
+        margin-top: 20px;
+    }
+    .yt {
+        height: 400px;
+        margin-top: 20px;
+    }
+}

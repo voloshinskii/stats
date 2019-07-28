@@ -1,11 +1,13 @@
 {
   "name": "untitled1",
   "version": "0.1.0",
+  "homepage": "http://stats.voloshinskii.ru",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-websocket": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

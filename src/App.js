@@ -1,26 +1,55 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Websocket from 'react-websocket';
+import './index.css';
+import {Online, Card, Donate} from "./components";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+    this.renderLoaded = this.renderLoaded.bind(this);
+  }
+
+  handleData(data) {
+    let d = JSON.parse(data);
+    this.setState({data: d});
+  }
+
+  componentDidUpdate(){
+    console.log(this.state);
+  }
+
+  renderLoaded(){
+    return(
+        <div>
+          <Online count={this.state.data.online}/>
+          <div style={{width: "90%", margin: "auto", marginTop: '35px'}} className="grid">
+            <Card k="z" count={this.state.data.z} data={<p>По данным <a target="_blank" href="https://ovdinfo.org/">ОВД-Инфо</a></p>}/>
+            <Card k="p_chely" count={this.state.data.p_chely}/>
+            <Card k="total" count={this.state.data.total}/>
+          </div>
+          <div className="embed">
+            <Donate />
+            <iframe className="yt" width="100%" src="https://www.youtube.com/embed/eoXCVuVeo-g" frameBorder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen></iframe>
+          </div>
+        </div>
+    )
+  }
+
+  render() {
+    return (
+        <div>
+          <Websocket url='ws://84.201.149.111:8999'
+                     onMessage={this.handleData.bind(this)}/>
+          {this.state.data && this.renderLoaded()}
+        </div>
+    );
+  }
 }
 
 export default App;
