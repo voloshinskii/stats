@@ -26,6 +26,7 @@ class App extends React.Component {
     return(
         <div>
           <Online count={this.state.data.online}/>
+            <h1 style={{width: "90%", margin: "auto", marginTop: "30px"}}>{this.state.data.title}</h1>
           <div style={{width: "90%", margin: "auto", marginTop: '35px'}} className="grid">
             <Card k="z" count={this.state.data.z} data={<p>По данным <a target="_blank" href="https://ovdinfo.org/">ОВД-Инфо</a></p>}/>
             <Card k="p_chely" count={this.state.data.p_chely}/>
