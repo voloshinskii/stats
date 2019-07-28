@@ -34,7 +34,7 @@ class App extends React.Component {
           </div>
           <div className="embed">
             <Donate />
-            <iframe className="yt" width="100%" src="https://www.youtube.com/embed/eoXCVuVeo-g" frameBorder="0"
+            <iframe className="yt" width="100%" src="https://www.youtube.com/embed/4dSYm1fOkyE" frameBorder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen></iframe>
           </div>
